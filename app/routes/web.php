@@ -1,0 +1,2 @@
+<?php
+$routes['test'] = 'home';
