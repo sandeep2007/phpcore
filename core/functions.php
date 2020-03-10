@@ -14,6 +14,25 @@ if (!function_exists('debug')) {
         }
     }
 }
+
+if (!function_exists('getConfig')) {
+
+    function &getConfig($key = NULL)
+    {
+        $null = NULL;
+        if($key){
+            if(isset($GLOBALS['config'][$key])){
+                return $GLOBALS['config'][$key];
+            }
+            else{
+                return $null;
+            }
+           
+        }
+       return $GLOBALS['config'];
+    }
+}
+
 if (!function_exists('uriDecoder')) {
     function uriDecoder()
     {

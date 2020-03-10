@@ -11,8 +11,7 @@ $config['script_path'] = '/';
 $config['database'] = FALSE;
 $config['session'] = FALSE;
 
-$config['logger'] = FALSE;
-$config['log_threshold'] = 0;
+$config['log_threshold'] = [1,5];
 $config['log_path'] = '';
 $config['log_file_extension'] = '';
 $config['log_file_permissions'] = 0644;
