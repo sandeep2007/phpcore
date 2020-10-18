@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 
 // $db = database();
@@ -10,4 +10,4 @@
 // }
 
 $data = ['title' => 'home'];
-view('welcome', $data);
+view('home', $data);

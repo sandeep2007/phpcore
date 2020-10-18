@@ -20,16 +20,14 @@ if (!function_exists('getConfig')) {
     function &getConfig($key = NULL)
     {
         $null = NULL;
-        if($key){
-            if(isset($GLOBALS['config'][$key])){
+        if ($key) {
+            if (isset($GLOBALS['config'][$key])) {
                 return $GLOBALS['config'][$key];
-            }
-            else{
+            } else {
                 return $null;
             }
-           
         }
-       return $GLOBALS['config'];
+        return $GLOBALS['config'];
     }
 }
 
@@ -248,7 +246,11 @@ if (!function_exists('urlSegment')) {
 if (!function_exists('loadPage')) {
     function loadPage($page_path)
     {
-        require_once trim($page_path);
+        if (php_sapi_name() !== "cli") {
+            require_once trim($page_path);
+        } else {
+            require_once str_replace('index.php\\', '', trim($page_path));
+        }
     }
 }
 
